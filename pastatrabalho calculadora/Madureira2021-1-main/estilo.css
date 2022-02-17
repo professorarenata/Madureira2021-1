@@ -1,0 +1,12 @@
+body{
+    background-color: darkgrey;
+}
+h1{
+    border: rgb(0, 0, 0) solid 5px;
+    background-color: rgb(6, 122, 172);
+}
+h3{
+      border: rgb(14, 11, 11) solid 5px;
+      background-color:rgb(6, 122, 172) ;
+      width: 100%;
+}
