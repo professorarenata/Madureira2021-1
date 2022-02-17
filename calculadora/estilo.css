@@ -3,10 +3,6 @@ body{
     color: white;
     text-align: center;
 }
-form{
-    margin: 100px solid rgb(80, 80, 80) ;
-    border-radius: 4px;
-}
 input:hover{
     background-color: black;
     color: white;
