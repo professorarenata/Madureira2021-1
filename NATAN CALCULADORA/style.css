@@ -1,0 +1,13 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+h1{
+    border-radius: 10px;
+    background-color: rgb(1, 255, 221);
+}
+h3{
+      border-radius: 20px;
+      background-color: rgb(1, 255, 221) ;
+      width: 100%;
+}
