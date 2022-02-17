@@ -1,55 +1,58 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<script>
-function soma(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a+b);
-   alert("A soma dos n�meros �:  "+c);
-}
-
-function sub(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a-b);
-   alert("A subtra��o dos n�meros �:  "+c);
-}
-function multi(form1)
-{
-  a=new Number(form1.t1.value);
-  b=new Number(form1.t2.value);
-  c=new Number(a*b);
-  alert("A multiplicação dos números: "+c);
-}
-function divisao(form1)
-{
-  a=new Number(form1.t1.value);
-  b=new Number(form1.t2.value);
-  c=new Number(a/b);
-  alert("A divisão dos números: "+c);
-}
-</script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Simples</title>
+  <link rel="stylesheet" type="text/css" href="estilo-calc.css" media="screen">
 </head>
-
 <body>
-<center><h1>Calculadora <br><br> </h1>
-  <h3>
-Digite um n�mero:
-<form name="form1">
-  <input type="text" name="t1"><br>
-  Digite outro n�mero:<br>
-  <input type="text" name="t2"><br><br>
-  <input type="button" name="b1" value="+" onClick="soma(form1)">
-  <input type="button" name="b2" value="-" onClick="sub(form1)">
-  <input type="button" name="b3" value="*" onclick="multi(form1)">
-  <input type="button" name="b4" value="/"  onclick="divisao(form1)">
-  <br><br>
-  Escolha a cor da HomePage:<br>
-  
-</form>
- </h3>
+  <head>
+    <script>
+      function soma(form1)
+        {
+          a=new Number(form1.t1.value);
+          b=new Number(form1.t2.value);
+          c=new Number(a+b);
+          alert("A soma dos números é:  "+c);
+        }
 
+      function sub(form1)
+        {
+          a=new Number(form1.t1.value);
+          b=new Number(form1.t2.value);
+          c=new Number(a-b);
+          alert("A subtração dos números é:  "+c);
+        }
+      function mult(form1)
+        {
+          a=new Number(form1.t1.value);
+          b=new Number(form1.t2.value);
+          c=new Number(a*b);
+          alert("A multiplicação dos numeros é: "+c)
+        }
+      function div(form1)
+        {
+          a=new Number(form1.t1.value);
+          b=new Number(form1.t2.value);
+          c=new Number(a/b);
+          alert("A divisão dos numeros é: "+c)
+        }
+    </script>
+  </head>
+<body>
+  <center><h1>Calculadora Simples</h1>
+  <h3>
+    Digite o 1º número:
+      <form name="form1">
+        <input type="text" name="t1"><br>
+    Digite o 2º número:<br>
+        <input type="text" name="t2"><br><br>
+        <input type="button" name="b1" value="+" onClick="soma(form1)">
+        <input type="button" name="b2" value="-" onClick="sub(form1)">
+        <input type="button" name="b3" value="*" onclick="mult(form1)">
+        <input type="button" name="b4" value="/" onclick="div(form1)">
+      </form>
+  </h3>
 </body>
-</html>
