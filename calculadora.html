@@ -25,6 +25,20 @@
         c=new Number(a-b);
         alert("A subtra��o dos n�meros �:  "+c);
       }
+
+      function mul(form1){
+        a=new Number(form1.t1.value);
+        b=new Number(form1.t2.value);
+        c=new Number(a*b);
+        alert("A Multiplicação dos números ?:  "+c);
+      }
+
+      function div(form1){
+        a=new Number(form1.t1.value);
+        b=new Number(form1.t2.value);
+        c=new Number(a/b);
+        alert("A Divisão dos números ?:  "+c);
+      }
     </script>
   </head>
 
@@ -39,8 +53,8 @@
         <input type="text" name="t2"><br>
         <input type="button" name="b1" value="+" onClick="soma(form1)">
         <input type="button" name="b2" value="-" onClick="sub(form1)">
-        <input type="button" name="b3" value="*">
-        <input type="button" name="b4" value="/">
+        <input type="button" name="b3" value="*" onClick="mul(form1)">
+        <input type="button" name="b4" value="/" onClick="div(form1)">
       </form>
     </h3>
   </body>
