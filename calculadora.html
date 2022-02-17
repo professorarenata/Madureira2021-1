@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="css/estilo.css">
 <html>
 <head>
 <script>
@@ -7,7 +7,7 @@ function soma(form1)
    a=new Number(form1.t1.value);
    b=new Number(form1.t2.value);
    c=new Number(a+b);
-   alert("A soma dos numeros é:  "+c);
+   alert("A soma dos n�meros �:  "+c);
 }
 
 function sub(form1)
@@ -15,21 +15,7 @@ function sub(form1)
    a=new Number(form1.t1.value);
    b=new Number(form1.t2.value);
    c=new Number(a-b);
-   alert("A subtração dos numeros  é:  "+c);
-}
-function mult(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a*b);
-   alert("A divisão dos numeros é:  "+c);
-}
-function div(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a/b);
-   alert("A multiplicação dos numeros é:  "+c);
+   alert("A subtra��o dos n�meros �:  "+c);
 }
 </script>
 </head>
@@ -37,21 +23,20 @@ function div(form1)
 <body>
 <center><h1>Calculadora <br><br> </h1>
   <h3>
-Digite um numero:
+Digite um número:
 <form name="form1">
   <input type="text" name="t1"><br>
-  Digite outro numero:<br>
+  Digite outro número:<br>
   <input type="text" name="t2"><br><br>
   <input type="button" name="b1" value="+" onClick="soma(form1)">
   <input type="button" name="b2" value="-" onClick="sub(form1)">
-  <input type="button" name="b3" value="*" onClick="mult(form1)"> 
-  <input type="button" name="b4" value="/" onClick="div(form1)">
+  <input type="button" name="b3" value="*">
+  <input type="button" name="b4" value="/">
   <br><br>
   Escolha a cor da HomePage:<br>
   
 </form>
  </h3>
+
 </body>
 </html>
-
-
