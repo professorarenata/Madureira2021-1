@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 16/10</title>
+        <style>
+            body{
+                margin: 0;
+                background: url(urna.jpg) no-repeat 50% -10% gray;
+                font-family: Verdana, sans-serif;
+            }
+            .conteudo{
+                width: 30%;
+                margin: 170px 320px 0;
+            }
+            header img{
+                margin: 0 auto;
+                display: block;
+            }
+            header h1{
+                text-align: center;
+            }
+            .input input{
+                display: block;
+                margin: 0 auto 10px;
+                width: 40%;
+                height: 30px;
+                font-size: 16pt;
+            }
+            .input label{
+                display: block;
+                text-align: center;
+            }
+            .button{
+                margin: 30px 46px;
+            }
+            .button input, .resultado input{
+                margin: 0;
+                padding: 10px 20px;
+                border: 0;
+            }
+            .confirmar{
+                background: rgb(105, 179, 2);
+            }
+            .corrigir{
+                background: lightgray;
+            }
+            .resultado input{
+                margin-left: 137.5px;
+                position: relative;
+                top: -10px;
+                background: rgba(0, 128, 0);
+            }
+            input[type="submit"], input[type="reset"], input[type="button"]{
+                cursor: pointer;
+            }
+            .pres{
+                position: absolute;
+                width: 100px;
+            }
+            .gov{
+                position: absolute;
+                width: 100px;
+                top: 28.9%;
+                left: 47.3%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conteudo">
+            <header>
+                <h1>Urna Eletronica</h1>
+            </header>
+            <hr>
+            <form name="form">
+                <div class="input">
+                    <span id="pres"></span>
+                    <label for="presidente">Presidente:</label> 
+                    <input type="number" id="presidente" name="presidente" required autofocus onkeyup="fotop(form)">
+                </div>
+                <div class="input">
+                    <span id="gov"></span>
+                    <label for="governador">Governador:</label>
+                    <input type="number" id="governador" name="governador" required onkeyup="fotog(form)">
+                </div>
+                <div class="button">
+                    <input class="confirmar" onclick="calcular(form)"  type="submit" value="Confirmar">
+                    <input class="nulo" type="reset" onclick="branco2()" value="Branco">
+                    <input class="corrigir" type="reset" value="Corrigir">
+                </div>
+                <div class="resultado">
+                    <input class="" type="button" onclick="resultado()" value="Resultados">
+                </div>         
+            </form>
+        </div>
+        <script>
+            // Bolsonaro, Haddad, Daciolo, Nulo
+            var votoP  = [0, 0, 0, 0];
+            // Eduardo Paes, Wilson Witzel, Crivella, Nulo
+            var votoG  = [0, 0, 0, 0];
+            var branco = 0;
+            var totalVotos = 0;
+
+            form.addEventListener("submit", (event) => { 
+                    event.preventDefault();
+            });
+            function fotop(form)
+			{
+			    var presidente  = form.presidente.value;
+                
+                switch (presidente){
+                    case "17":
+                        document.querySelector("#pres").innerHTML = "<img class='pres' src='bolso.jpg'>";
+                        break;
+                    case "13":
+                        document.querySelector("#pres").innerHTML = "<img class='pres' src='haddad.png'>";
+                        break;
+                    case "15":
+                        document.querySelector("#pres").innerHTML = "<img class='pres' src='daciolo.jpeg'>";
+                        break;
+                }
+			}
+			function fotog(form)
+			{
+			    var governador  = form.governador.value;
+
+                switch (governador){
+                    case "25":
+                        document.querySelector("#gov").innerHTML = "<img class='gov' src='paes.png'>";
+                        break;
+                    case "20":
+                        document.querySelector("#gov").innerHTML = "<img class='gov' src='wilson.png'>";
+                        break;
+                    case "10":
+                        document.querySelector("#gov").innerHTML = "<img class='gov' src='crivela.jpeg'>";
+                        break;
+                }
+			}
+            function calcular(form){
+                totalVotos  = totalVotos + 1;
+                var presidente  = form.presidente.value;
+                var governador  = form.governador.value;
+
+                switch (presidente){
+                    case "17":
+                        //document.querySelector("#pres").innerHTML = "<img class='pres' src='bolso.jpg'>";
+                        alert("Voto de presidente para Bolsonaro!");
+                        votoP[0] = votoP[0] + 1;
+                        break;
+                    case "13":
+                        //document.querySelector("#pres").innerHTML = "<img class='pres' src='haddad.png'>";
+                        alert("Voto de Presidente para Haddad!");
+                        votoP[1] = votoP[1] + 1;
+                        break;
+                    case "15":
+                        //document.querySelector("#pres").innerHTML = "<img class='pres' src='haddad.png'>";
+                        alert("Voto de Presidente para Daciolo!");
+                        votoP[1] = votoP[1] + 1;
+                        break;
+                    default:
+                        alert("Voto nulo para presidente!");
+                        votoP[2] = votoP[2] + 1;
+                }
+
+                switch (governador){
+                    case "25":
+                        //document.querySelector("#gov").innerHTML = "<img class='gov' src='paes.png'>";
+                        alert("Voto de governador para Eduardo Paes!");
+                        votoG[0] = votoG[0] + 1;
+                        break;
+                    case "20":
+                        //document.querySelector("#gov").innerHTML = "<img class='gov' src='wilson.png'>";
+                        alert("Voto de governador para Wilson Witzel!");
+                        votoG[1] = votoG[1] + 1;
+                        break;
+                    case "10":
+                        //document.querySelector("#gov").innerHTML = "<img class='gov' src='wilson.png'>";
+                        alert("Voto de governador para Crivella!");
+                        votoG[1] = votoG[1] + 1;
+                        break;
+                    default:
+                        alert("Voto nulo para governador!");
+                        votoG[2] = votoG[2] + 1;
+                }
+				form.presidente.value="";
+				form.governador.value="";
+				document.querySelector("#pres").innerHTML = "<img class='pres' src=''>";
+				document.querySelector("#gov").innerHTML = "<img class='gov' src=''>";
+				
+            }
+            
+            function branco2(){
+                alert("Voto em branco!");
+                totalVotos = totalVotos + 1;
+                branco = branco + 1;
+            }
+
+            function resultado(){
+                alert(`Total de votos: ${totalVotos}
+Total de votos em banco: ${branco}
+
+Presidente:
+
+Quantidade de votos para Bolsonaro: ${votoP[0]}
+Quantidade de votos para Haddad: ${votoP[1]}
+Quantidade de votos para Daciolo: ${votoP[2]}
+Quantidade de votos Nulo: ${votoP[3]}
+
+Governador:
+Quantidade de votos para Wilson Witzel: ${votoG[1]}
+Quantidade de votos para Eduardo Paes: ${votoG[0]}
+Quantidade de votos para Crivella: ${votoG[2]}
+Quantidade de votos nulo: ${votoP[3]}`)
+            }
+
+            // função para desabilitar a tecla F5.
+            window.onkeydown = function (e) {
+                if (e.keyCode === 116) {
+                alert("Função não permitida");
+                e.keyCode = 0;
+                e.returnValue = false;
+                return false;
+                }
+            }
+
+        </script>
+    </body>
+</html>
