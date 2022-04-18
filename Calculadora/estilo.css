@@ -1,3 +1,9 @@
-*{
-    background-color: burlywood;
+body{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+input:hover{
+    background-color: black;
+    color: white;
 }
